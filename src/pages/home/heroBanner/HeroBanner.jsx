@@ -19,11 +19,22 @@ const HeroBanner = () => {
   }, [data])
 
 
-  const searchQueryHandler = (e) => {
-    if (e.key === "Enter" && query.length > 0) {
+  // const searchQueryHandler = (e) => {
+  //   if (e.key === "Enter" && query.length > 0) {
+  //     navigate(`/search/${query}`);
+  //   }
+  // }
+
+  const handleSearch = () => {
+    if (query.length > 0) {
       navigate(`/search/${query}`);
     }
-  }
+  };
+  const searchQueryHandler = (e) => {
+    if (e.key === "Enter") {
+      handleSearch();
+    }
+  };
 
   return (
     <div className='heroBanner'>
@@ -41,8 +52,9 @@ const HeroBanner = () => {
               placeholder='Search for a movie or tv show...'
               onChange={(e) => setQuery(e.target.value)}
               onKeyUp={searchQueryHandler}
+              tabIndex={2}
             />
-            <button>Search</button>
+            <button onClick={handleSearch}>Search</button>
           </div>
         </div>
       </ContentWrapper>

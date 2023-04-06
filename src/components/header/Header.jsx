@@ -105,6 +105,7 @@ const Header = () => {
                 placeholder='Search...'
                 onChange={(e) => setQuery(e.target.value)}
                 onKeyUp={searchQueryHandler}
+                tabIndex={1}
               />
               <VscChromeClose onClick={() => setShowSearch(false)} />
             </div>

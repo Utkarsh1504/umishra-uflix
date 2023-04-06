@@ -25,6 +25,7 @@
     transform: translateY(-60px);
   }
 
+
   .contentWrapper {
     display: flex;
     align-items: center;
@@ -85,6 +86,9 @@
     svg {
       font-size: 18px;
       color: white;
+    }
+    &:hover {
+      color: var(--flix);
     }
   }
 
